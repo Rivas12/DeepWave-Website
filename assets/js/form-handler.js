@@ -24,39 +24,44 @@ document.head.appendChild(notificationStyle);
 // Manipulação do formulário de contato
 document.addEventListener('DOMContentLoaded', function() {
     const form = document.getElementById('contact-form');
-    
+
+    // Função global para disparar conversão do Google Ads
+    window.triggerAdsConversion = function() {
+        if (typeof gtag === 'function') {
+            gtag('event', 'conversion', {
+                'send_to': 'AW-17463254035/5KUMCMG8vYQbEJO4kIdB',
+                'value': 1.0,
+                'currency': 'BRL'
+            });
+        }
+    };
+
     if (form) {
         form.addEventListener('submit', function(e) {
             e.preventDefault();
-            
+
             // Valida os campos
             const name = document.getElementById('name').value.trim();
             const email = document.getElementById('email').value.trim();
             const whatsapp = document.getElementById('whatsapp').value.trim();
             const message = document.getElementById('message').value.trim();
-            
+
             if (!name || !email || !whatsapp || !message) {
                 alert('Por favor, preencha todos os campos obrigatórios.');
                 return;
             }
-            
+
             // Mudar texto do botão
             const submitBtn = document.querySelector('.btn-submit span');
             const originalText = submitBtn.textContent;
             submitBtn.textContent = 'Enviando...';
-            
+
             // Dispara o evento de conversão do Google Ads
-            if (typeof gtag === 'function') {
-                gtag('event', 'conversion', {
-                    'send_to': 'AW-17463254035/5KUMCMG8vYQbEJO4kIdB',
-                    'value': 1.0,
-                    'currency': 'BRL'
-                });
-            }
-            
+            window.triggerAdsConversion();
+
             // Submete o formulário diretamente
             const formData = new FormData(form);
-            
+
             fetch(form.action, {
                 method: 'POST',
                 body: formData,
@@ -65,21 +70,21 @@ document.addEventListener('DOMContentLoaded', function() {
             .then(() => {
                 // Como usamos no-cors, sempre assumimos sucesso se não houver erro de rede
                 submitBtn.textContent = '✅ Enviado!';
-                
+
                 // Criar notificação
                 const notification = document.createElement('div');
                 notification.className = 'notification';
                 notification.innerHTML = '🎉 Solicitação enviada com sucesso!';
                 document.body.appendChild(notification);
-                
+
                 // Mostrar notificação
                 setTimeout(() => {
                     notification.classList.add('show');
                 }, 100);
-                
+
                 // Limpar formulário
                 form.reset();
-                
+
                 // Remover notificação e resetar botão após 3 segundos
                 setTimeout(() => {
                     notification.classList.remove('show');
@@ -92,18 +97,18 @@ document.addEventListener('DOMContentLoaded', function() {
             .catch(error => {
                 // Erro no envio (apenas erros de rede)
                 submitBtn.textContent = '❌ Erro no envio';
-                
+
                 // Criar notificação de erro
                 const notification = document.createElement('div');
                 notification.className = 'notification';
                 notification.style.background = '#ff4757';
                 notification.innerHTML = '❌ Erro ao enviar. Tente novamente!';
                 document.body.appendChild(notification);
-                
+
                 setTimeout(() => {
                     notification.classList.add('show');
                 }, 100);
-                
+
                 setTimeout(() => {
                     notification.classList.remove('show');
                     setTimeout(() => {

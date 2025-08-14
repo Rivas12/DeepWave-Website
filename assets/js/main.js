@@ -60,9 +60,25 @@ document.addEventListener("DOMContentLoaded", function() {
         });
     }
 
+    // Disparar conversão ao clicar no botão WhatsApp do formulário
+    const whatsappFormBtn = document.querySelector('.btn-whatsapp-form');
+    if (whatsappFormBtn) {
+        whatsappFormBtn.addEventListener('click', function() {
+            if (window.triggerAdsConversion) window.triggerAdsConversion();
+        });
+    }
+
+    // Disparar conversão ao clicar no botão flutuante WhatsApp
+    const whatsappFloatBtn = document.querySelector('.whatsapp-btn');
+    if (whatsappFloatBtn) {
+        whatsappFloatBtn.addEventListener('click', function() {
+            if (window.triggerAdsConversion) window.triggerAdsConversion();
+        });
+    }
+
     // Certifica que o scroll funciona bem em dispositivos móveis
     const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
-    
+
     if (isMobile) {
         // Em dispositivos móveis, ajustamos a duração para ser um pouco mais rápida
         document.documentElement.style.setProperty('--scroll-timeline', '600ms');

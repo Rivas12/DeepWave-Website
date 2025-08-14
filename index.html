@@ -19,15 +19,6 @@
       gtag('config', 'AW-17463254035');
     </script>
     
-    <!-- Event snippet for Submit lead form conversion page -->
-    <script>
-      gtag('event', 'conversion', {
-          'send_to': 'AW-17463254035/5KUMCMG8vYQbEJO4kIdB',
-          'value': 1.0,
-          'currency': 'BRL'
-      });
-    </script>
-    
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
     <meta property="og:title" content="DeepWave - Sites e Landing Pages que Convertem">
@@ -80,7 +71,15 @@
     }
     </script>
     
+    <!-- JivoChat com callback para evento de conversão apenas no envio do formulário -->
     <script src="https://code.jivosite.com/widget/VPlXtgI7XJ" async></script>
+    <script>        
+        window.jivo_onIntroduction = function() {
+            // Chamado quando o visitante envia o formulário pré-chat (nome, email, telefone)
+            if (window.triggerAdsConversion) window.triggerAdsConversion();
+            console.log("Formulário do JivoChat enviado - conversão ativada");
+        };
+    </script>
 </head>
 <body>
     <!-- Elementos de background futurista -->
