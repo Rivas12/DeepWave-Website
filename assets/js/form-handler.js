@@ -46,8 +46,12 @@ document.addEventListener('DOMContentLoaded', function() {
             submitBtn.textContent = 'Enviando...';
             
             // Dispara o evento de conversão do Google Ads
-            if (typeof trackConversion === 'function') {
-                trackConversion();
+            if (typeof gtag === 'function') {
+                gtag('event', 'conversion', {
+                    'send_to': 'AW-17463254035/5KUMCMG8vYQbEJO4kIdB',
+                    'value': 1.0,
+                    'currency': 'BRL'
+                });
             }
             
             // Submete o formulário diretamente
