@@ -1491,7 +1491,179 @@ body {
     }
 
     .btn-nav-cta {
-      display: none !important;
+      display: inline-block !important;
+      margin-top: 10px !important;
     }
   }
 
+/* Animação para o botão "Contratar Agora" no menu de navegação */
+.btn-nav-cta {
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.3s, box-shadow 0.3s !important;
+  background: rgba(14, 17, 34, 0.9) !important;
+  border-radius: 30px !important;
+  padding: 8px 20px !important;
+  border: none !important;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3) !important;
+}
+
+/* Efeito de borda gradiente animada */
+.btn-nav-cta::before {
+  content: '';
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  right: -2px;
+  bottom: -2px;
+  z-index: -1;
+  background: linear-gradient(90deg, var(--primary), var(--secondary), var(--accent), var(--primary));
+  background-size: 400% 400%;
+  border-radius: 32px;
+  animation: border-animate 4s linear infinite;
+}
+
+@keyframes border-animate {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/* Fundo do botão - layer interno para criar o efeito de borda */
+.btn-nav-cta::after {
+  content: '';
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  right: 2px;
+  bottom: 2px;
+  background: rgba(14, 17, 34, 0.95);
+  border-radius: 28px;
+  z-index: -1;
+}
+
+/* Efeito de hover */
+.btn-nav-cta:hover {
+  transform: translateY(-2px) !important;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.4) !important;
+}
+
+.btn-nav-cta:hover::before {
+  animation: border-animate 2s linear infinite;
+}
+
+/* Efeito de clique/pressionar */
+.btn-nav-cta:active {
+  transform: translateY(1px) !important;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3) !important;
+  transition: transform 0.1s, box-shadow 0.1s !important;
+}
+
+/* Estilização do texto */
+.btn-nav-cta span {
+  position: relative;
+  z-index: 2;
+  color: #ffffff !important;
+  font-weight: 600 !important;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+  font-size: 15px !important;
+}
+
+/* Animação para o botão "Aproveitar oferta especial" */
+.whatsapp-redirect {
+  position: relative !important;
+  overflow: hidden !important;
+  background: rgba(14, 17, 34, 0.9) !important;
+  transition: transform 0.3s, box-shadow 0.3s !important;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3) !important;
+  border: none !important;
+  border-radius: 30px !important;
+  padding: 15px 35px !important;
+}
+
+/* Efeito de borda gradiente animada para o botão de promoção */
+.whatsapp-redirect::before {
+  content: '';
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  right: -2px;
+  bottom: -2px;
+  z-index: -1;
+  background: linear-gradient(90deg, var(--accent), var(--primary), var(--secondary), var(--accent));
+  background-size: 400% 400%;
+  border-radius: 32px;
+  animation: border-animate-promo 5s linear infinite;
+}
+
+@keyframes border-animate-promo {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/* Fundo interno do botão de promoção */
+.whatsapp-redirect::after {
+  content: '';
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  right: 2px;
+  bottom: 2px;
+  background: rgba(14, 17, 34, 0.95);
+  border-radius: 28px;
+  z-index: -1;
+}
+
+/* Efeito de hover para o botão de promoção */
+.whatsapp-redirect:hover {
+  transform: translateY(-3px) !important;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4) !important;
+}
+
+.whatsapp-redirect:hover::before {
+  animation: border-animate-promo 3s linear infinite;
+}
+
+/* Efeito de clique/pressionar para o botão de promoção */
+.whatsapp-redirect:active {
+  transform: translateY(1px) !important;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.3) !important;
+  transition: transform 0.1s, box-shadow 0.1s !important;
+}
+
+/* Estilização do texto do botão de promoção */
+.whatsapp-redirect span {
+  position: relative;
+  z-index: 5;
+  color: #ffffff !important;
+  font-weight: 700 !important;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+  font-size: 18px !important;
+}
+
+@media screen and (max-width: 768px) {
+  .whatsapp-redirect {
+    padding: 14px 25px !important;
+  }
+  
+  .whatsapp-redirect::before {
+    animation: border-animate-promo 8s linear infinite;
+  }
+  
+  .whatsapp-redirect span {
+    font-size: 16px !important;
+  }
+}

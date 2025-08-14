@@ -1,0 +1,124 @@
+/* Animação para o botão "Contratar Agora" no menu de navegação */
+
+.btn-nav-cta {
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.3s !important;
+    background: rgba(14, 17, 34, 0.9) !important;
+    border-radius: 30px !important;
+    padding: 8px 20px !important;
+    border: none !important;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3) !important;
+}
+
+/* Efeito de borda gradiente animada */
+.btn-nav-cta::before {
+    content: '';
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    right: -2px;
+    bottom: -2px;
+    z-index: -1;
+    background: linear-gradient(90deg, var(--primary), var(--secondary), var(--accent), var(--primary));
+    background-size: 400% 400%;
+    border-radius: 32px;
+    animation: border-animate 4s linear infinite;
+}
+
+@keyframes border-animate {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+/* Substituído pelo efeito de borda girando */
+
+/* Fundo do botão - layer interno para criar o efeito de borda */
+.btn-nav-cta::after {
+    content: '';
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    right: 2px;
+    bottom: 2px;
+    background: rgba(14, 17, 34, 0.95);
+    border-radius: 28px;
+    z-index: -1;
+}
+
+/* Efeito de hover */
+.btn-nav-cta:hover {
+    transform: translateY(-2px) !important;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.4) !important;
+}
+
+.btn-nav-cta:hover::before {
+    animation: border-animate 2s linear infinite;
+}
+
+/* Efeito de clique/pressionar */
+.btn-nav-cta:active {
+    transform: translateY(1px) !important;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3) !important;
+    transition: transform 0.1s, box-shadow 0.1s !important;
+}
+
+/* Certifica que o span dentro do botão está posicionado corretamente */
+.btn-nav-cta span {
+    position: relative;
+    z-index: 2;
+    transition: all 0.3s;
+    display: inline-block;
+}
+
+/* Estilização do texto dentro do botão */
+.btn-nav-cta span {
+    position: relative;
+    z-index: 5;
+    padding: 0px 5px;
+}
+
+/* Removidos os efeitos adicionais para focar na animação da borda giratória */
+
+/* Estilização adicional para o botão */
+.btn-nav-cta {
+    background: rgba(14, 17, 34, 0.9) !important;
+    border-radius: 30px !important;
+    padding: 8px 20px !important;
+    border: none !important;
+    z-index: 10 !important;
+}
+
+/* Estilização do texto */
+.btn-nav-cta span {
+    position: relative;
+    z-index: 2;
+    color: #ffffff !important;
+    font-weight: 600 !important;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+    font-size: 15px !important;
+}
+
+/* Para dispositivos móveis */
+@media screen and (max-width: 768px) {
+    .btn-nav-cta {
+        display: inline-block !important;
+        margin-top: 10px !important;
+        padding: 7px 16px !important;
+    }
+    
+    .btn-nav-cta::before {
+        animation: border-animate 6s linear infinite;
+    }
+    
+    .btn-nav-cta span {
+        font-size: 14px !important;
+    }
+}

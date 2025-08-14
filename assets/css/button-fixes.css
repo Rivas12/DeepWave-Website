@@ -1,0 +1,129 @@
+/* Correções para os botões específicos no mobile */
+
+/* Botão "Atendimento rápido pelo WhatsApp" */
+.btn-whatsapp-form {
+    margin-top: 16px;
+    display: inline-block;
+    background: linear-gradient(90deg, #25d366 0%, #128c7e 100%); 
+    color: #fff;
+    border: none;
+    border-radius: 50px;
+    padding: 15px 35px;
+    font-size: 16px;
+    font-weight: 600;
+    text-decoration: none;
+    cursor: pointer;
+    transition: var(--transition);
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+    box-shadow: 0 6px 20px rgba(37, 211, 102, 0.3);
+    width: 100%;
+    text-align: center;
+}
+
+.btn-whatsapp-form:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(37, 211, 102, 0.4);
+}
+
+.btn-whatsapp-form:active {
+    transform: translateY(1px);
+    box-shadow: 0 3px 10px rgba(37, 211, 102, 0.3);
+}
+
+.btn-whatsapp-form span {
+    position: relative;
+    z-index: 2;
+    color: #ffffff;
+    display: inline-block;
+}
+
+/* Botão "Solicitar orçamento" */
+.btn-submit {
+    width: 100%;
+    max-width: 100%;
+    margin: 0 auto;
+    padding: 12px 24px !important;
+    font-size: 16px !important;
+}
+
+/* Botão "Atendimento rápido pelo WhatsApp" */
+@media screen and (max-width: 768px) {
+    .btn-whatsapp-form {
+        width: 100% !important;
+        max-width: 350px !important;
+        padding: 14px 0 !important;
+        font-size: 16px !important;
+        display: inline-block !important;
+        text-align: center !important;
+        margin: 0 auto !important;
+    }
+    
+    /* Espaçamentos melhores para o formulário no mobile */
+    .form-group {
+        margin-bottom: 16px;
+    }
+    
+    .form-group input, 
+    .form-group textarea {
+        padding: 12px !important;
+        font-size: 14px !important;
+    }
+    
+    /* Ajustes botão promocional */
+    .btn-promotion {
+        width: 100%;
+        max-width: 280px;
+        margin: 0 auto;
+        padding: 14px 20px !important;
+        font-size: 16px !important;
+    }
+    
+    .btn-promotion span {
+        font-size: 16px !important;
+    }
+    
+    .promotion-disclaimer {
+        padding: 0 20px;
+    }
+    
+    /* Ajuste para a seção de promoção */
+    .promotion-features {
+        display: grid;
+        grid-template-columns: 1fr !important;
+        gap: 10px !important;
+    }
+    
+    .promotion-features span {
+        font-size: 13px !important;
+        justify-content: center !important;
+    }
+}
+
+/* Correções específicas para o botão "APROVEITAR OFERTA ESPECIAL" */
+.btn-promotion.whatsapp-redirect {
+    display: inline-block;
+    text-align: center;
+    margin: 0 auto;
+}
+
+@media screen and (max-width: 480px) {
+    /* Ajuste adicional para telas muito pequenas */
+    .promotion-badge {
+        font-size: 12px !important;
+        padding: 6px 16px !important;
+    }
+    
+    .old-price {
+        font-size: 16px !important;
+    }
+    
+    .new-price {
+        font-size: 30px !important;
+    }
+    
+    .promotion-description {
+        font-size: 14px !important;
+    }
+}

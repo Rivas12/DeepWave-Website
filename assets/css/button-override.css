@@ -1,0 +1,25 @@
+/* Override para os botões na seção de contato */
+
+.btn-whatsapp-form {
+    background: linear-gradient(90deg, #3fe380 0%, #25d366 100%) !important; 
+    border-radius: 60px !important;
+    padding: 14px 0 !important;
+    box-shadow: 0 4px 15px rgba(37, 211, 102, 0.25) !important;
+    text-align: center !important;
+    display: inline-block !important;
+    width: 100% !important;
+    max-width: 350px !important;
+    margin: 0 auto !important;
+}
+
+.btn-submit {
+    background: linear-gradient(90deg, #00f7ff 0%, #6d30ff 100%) !important;
+    border-radius: 60px !important;
+    padding: 14px 0 !important;
+    box-shadow: 0 4px 15px rgba(109, 48, 255, 0.25) !important;
+    text-align: center !important;
+    display: block !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 0 auto !important;
+}

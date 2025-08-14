@@ -1,0 +1,58 @@
+/* Animação para o botão "Aproveitar oferta especial" - VERSÃO CORRIGIDA */
+.whatsapp-redirect {
+    position: relative !important;
+    display: inline-block !important;
+    overflow: hidden !important;
+    background: linear-gradient(45deg, var(--accent), #ff6b35) !important;
+    color: var(--light) !important;
+    border: none !important;
+    border-radius: 50px !important;
+    font-size: 18px !important;
+    font-weight: 700 !important;
+    padding: 15px 35px !important;
+    text-decoration: none !important;
+    text-transform: uppercase !important;
+    letter-spacing: 1px !important;
+    transition: var(--transition) !important;
+    box-shadow: 0 10px 30px rgba(255, 46, 147, 0.4) !important;
+    animation: gradient-shift 3s infinite ease-in-out !important;
+    background-size: 200% 200% !important;
+    text-align: center;
+}
+
+/* Animação removida e substituída pelo gradient-shift existente */
+
+/* Efeito de hover para o botão de promoção */
+.whatsapp-redirect:hover {
+    transform: translateY(-3px) !important;
+    box-shadow: 0 15px 30px rgba(255, 46, 147, 0.6) !important;
+}
+
+/* Efeito de clique/pressionar para o botão de promoção */
+.whatsapp-redirect:active {
+    transform: translateY(1px) !important;
+    box-shadow: 0 5px 15px rgba(255, 46, 147, 0.4) !important;
+    transition: transform 0.1s, box-shadow 0.1s !important;
+}
+
+/* Estilização do texto do botão de promoção */
+.whatsapp-redirect span {
+    position: relative;
+    z-index: 2;
+    color: #ffffff !important;
+    font-weight: 700 !important;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+    font-size: 18px !important;
+}
+
+/* Para dispositivos móveis */
+@media screen and (max-width: 768px) {
+    .whatsapp-redirect {
+        padding: 14px 25px !important;
+        font-size: 16px !important;
+    }
+    
+    .whatsapp-redirect span {
+        font-size: 16px !important;
+    }
+}

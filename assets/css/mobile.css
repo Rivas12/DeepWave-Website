@@ -1,0 +1,230 @@
+/* Estilos específicos para o menu mobile */
+
+/* Botão de hambúrguer */
+.hamburger-menu {
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30px;
+    height: 21px;
+    cursor: pointer;
+    z-index: 2000;
+    position: relative;
+}
+
+.hamburger-line {
+    display: block;
+    width: 100%;
+    height: 3px;
+    background: var(--primary);
+    border-radius: 3px;
+    transition: all 0.3s ease;
+}
+
+/* Animação do botão hambúrguer para o X */
+.hamburger-menu.active .hamburger-line:nth-child(1) {
+    transform: translateY(9px) rotate(45deg);
+    background: var(--accent);
+}
+
+.hamburger-menu.active .hamburger-line:nth-child(2) {
+    opacity: 0;
+}
+
+.hamburger-menu.active .hamburger-line:nth-child(3) {
+    transform: translateY(-9px) rotate(-45deg);
+    background: var(--accent);
+}
+
+/* Estilo para body quando menu está aberto - impede scroll */
+body.menu-open {
+    overflow: hidden;
+}
+
+/* Media queries para dispositivos móveis */
+@media screen and (max-width: 768px) {
+    .hamburger-menu {
+        display: flex;
+    }
+    
+    /* Estilização para o menu mobile */
+    .nav-links {
+        display: flex;
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 80%;
+        height: 100vh;
+        background: rgba(8, 11, 26, 0.98);
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        transition: all 0.4s ease-in-out;
+        backdrop-filter: blur(10px);
+        z-index: 1000;
+        box-shadow: -10px 0 30px rgba(0, 0, 0, 0.2);
+        padding: 80px 0;
+        overflow-y: auto;
+    }
+    
+    .nav-links.active {
+        right: 0;
+    }
+    
+    .nav-links li {
+        margin: 15px 0;
+        opacity: 0;
+        transform: translateY(20px);
+        transition: opacity 0.3s ease, transform 0.3s ease;
+        transition-delay: 0s;
+    }
+    
+    /* Animação para os itens do menu */
+    .nav-links.active li {
+        opacity: 1;
+        transform: translateY(0);
+    }
+    
+    /* Delay para cada item aparecer sequencialmente */
+    .nav-links.active li:nth-child(1) { transition-delay: 0.1s; }
+    .nav-links.active li:nth-child(2) { transition-delay: 0.2s; }
+    .nav-links.active li:nth-child(3) { transition-delay: 0.3s; }
+    .nav-links.active li:nth-child(4) { transition-delay: 0.4s; }
+    .nav-links.active li:nth-child(5) { transition-delay: 0.5s; }
+    .nav-links.active li:nth-child(6) { transition-delay: 0.6s; }
+    
+    /* Estilo para os links no menu mobile */
+    .nav-links a {
+        font-size: 20px !important;
+        padding: 10px 0 !important;
+    }
+    
+    /* Botão CTA no menu mobile */
+    .nav-links .btn-nav-cta {
+        margin-top: 20px !important;
+        margin-left: 0 !important;
+        padding: 12px 30px !important;
+    }
+    
+    /* Ajustes no hero para mobile */
+    .hero {
+        padding: 140px 0 80px !important;
+    }
+    
+    .hero-stats {
+        padding: 20px 0 !important;
+    }
+    
+    /* Ajustes nos botões para mobile */
+    .hero-buttons {
+        flex-direction: column;
+        gap: 16px;
+    }
+    
+    .btn {
+        width: 100%;
+        max-width: 280px;
+    }
+}
+
+/* Ajustes para telas muito pequenas */
+@media screen and (max-width: 480px) {
+    .nav-links {
+        width: 90%;
+    }
+    
+    .logo {
+        font-size: 22px;
+    }
+    
+    .logo-icon img {
+        width: 40px;
+        height: 40px;
+    }
+    
+    .hero h1 {
+        font-size: 32px !important;
+    }
+    
+    .hero-subtitle {
+        font-size: 15px !important;
+    }
+    
+    .hero-stats {
+        grid-template-columns: 1fr !important;
+    }
+    
+    .section-title h2 {
+        font-size: 28px !important;
+    }
+    
+    /* Ajuste para portfolio em telas pequenas */
+    .portfolio-grid {
+        grid-template-columns: 1fr !important;
+    }
+    
+    .portfolio-item {
+        margin-bottom: 20px;
+    }
+    
+    /* Ajuste formulário em telas pequenas */
+    .contact-form {
+        padding: 25px 15px !important;
+    }
+    
+    /* Ajuste promoção em telas pequenas */
+    .promotion-box {
+        padding: 25px 15px !important;
+    }
+    
+    .new-price {
+        font-size: 32px !important;
+    }
+    
+    .btn-promotion {
+        padding: 14px 25px !important;
+    }
+    
+    .promotion-features {
+        grid-template-columns: 1fr !important;
+    }
+}
+
+/* Correções para telas médias - tablets */
+@media screen and (min-width: 769px) and (max-width: 1024px) {
+    .portfolio-grid {
+        grid-template-columns: repeat(2, 1fr) !important;
+    }
+    
+    .hero h1 {
+        font-size: 42px !important;
+    }
+    
+    .about-content {
+        grid-template-columns: 1fr !important;
+        gap: 40px !important;
+    }
+    
+    .about-image {
+        order: -1;
+    }
+}
+
+/* Ajustes para section About em mobile */
+@media screen and (max-width: 768px) {
+    .about-content {
+        grid-template-columns: 1fr !important;
+        gap: 30px !important;
+    }
+    
+    .about-text h2 {
+        font-size: 32px !important;
+        text-align: center;
+    }
+    
+    .about-text .btn {
+        display: block;
+        margin: 20px auto;
+        max-width: 250px;
+    }
+}
