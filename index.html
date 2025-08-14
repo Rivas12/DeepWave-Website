@@ -83,6 +83,38 @@
     </script>
     
     <script src="https://code.jivosite.com/widget/VPlXtgI7XJ" async></script>
+            <!-- Botão WhatsApp flutuante -->
+            <style>
+                .whatsapp-float {
+                    position: fixed;
+                    bottom: 32px;
+                    right: 32px;
+                    z-index: 9999;
+                    display: flex;
+                    flex-direction: row;
+                    gap: 12px;
+                }
+                .whatsapp-btn {
+                    background: #25d366;
+                    border-radius: 50%;
+                    width: 56px;
+                    height: 56px;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+                    transition: box-shadow 0.2s;
+                    cursor: pointer;
+                }
+                .whatsapp-btn:hover {
+                    box-shadow: 0 4px 16px rgba(0,0,0,0.25);
+                }
+                .whatsapp-btn svg {
+                    width: 32px;
+                    height: 32px;
+                    fill: #fff;
+                }
+            </style>
 </head>
 <body>
     <!-- Elementos de background futurista -->
@@ -351,37 +383,55 @@
                 <h2>Solicite seu Orçamento</h2>
                 <p>Conte-nos sobre seu projeto e receba uma proposta personalizada para seu site ou landing page.</p>
             </div>
-            <div class="contact-form">
-                <form action="https://formsubmit.co/rivaldosilveira13@gmail.com" id="contact-form" method="POST">
-                    <!-- Campos ocultos para configuração do FormSubmit -->
-                    <input type="hidden" name="_subject" value="Novo orçamento - DeepWave">
-                    <input type="hidden" name="_template" value="table">
-                    <input type="hidden" name="_captcha" value="false">
-                    
-                    <div class="form-group">
-                        <label for="name">Nome</label>
-                        <input type="text" id="name" name="Nome" placeholder="Seu nome" required minlength="2">
-                    </div>
-                    <div class="form-group">
-                        <label for="email">Email</label>
-                        <input type="email" id="email" name="Email" placeholder="seu@email.com" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="whatsapp">WhatsApp</label>
-                        <input type="tel" id="whatsapp" name="WhatsApp" placeholder="(11) 99080-0000" required pattern="[0-9\s\(\)\-\+]{10,}">
-                    </div>
-                    <div class="form-group">
-                        <label for="message">Mensagem</label>
-                        <textarea id="message" name="Mensagem" placeholder="Descreva seu projeto: tipo de site, funcionalidades desejadas, prazo, etc." required minlength="10" rows="5"></textarea>
-                    </div>
-                    <button type="submit" class="btn btn-submit"><span>Solicitar orçamento</span></button>
-                </form>
+            <div class="contact-flex" style="display: flex; flex-wrap: wrap; gap: 32px; align-items: flex-start;">
+                <div class="contact-form" style="flex: 1 1 320px; min-width: 320px;">
+                    <form action="https://formsubmit.co/rivaldosilveira13@gmail.com" id="contact-form" method="POST">
+                        <!-- Campos ocultos para configuração do FormSubmit -->
+                        <input type="hidden" name="_subject" value="Novo orçamento - DeepWave">
+                        <input type="hidden" name="_template" value="table">
+                        <input type="hidden" name="_captcha" value="false">
+                        <div class="form-group">
+                            <label for="name">Nome</label>
+                            <input type="text" id="name" name="Nome" placeholder="Seu nome" required minlength="2">
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" name="Email" placeholder="seu@email.com" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="whatsapp">WhatsApp</label>
+                            <input type="tel" id="whatsapp" name="WhatsApp" placeholder="(11) 99080-0000" required pattern="[0-9\s\(\)\-\+]{10,}">
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Mensagem</label>
+                            <textarea id="message" name="Mensagem" placeholder="Descreva seu projeto: tipo de site, funcionalidades desejadas, prazo, etc." required minlength="10" rows="5"></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-submit" style="font-size: 16px;"><span>Solicitar orçamento</span></button>
+                        <a href="https://wa.me/+5511970838617" target="_blank" class="btn btn-whatsapp-form" style="margin-top: 16px; display: flex; align-items: center; justify-content: center; gap: 10px; background: linear-gradient(90deg, #25d366 60%, #128c7e 100%); color: #fff; border-radius: 32px; padding: 12px 32px; font-size: 16px; font-weight: 600; text-decoration: none; box-shadow: 0 2px 8px rgba(0,0,0,0.10); transition: background 0.2s, transform 0.2s;">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 32 32" fill="none">
+                                <circle cx="16" cy="16" r="16" fill="#25d366"/>
+                                <path d="M22.5 9.5c-1.5-1.5-3.5-2.5-5.5-2.5-4.4 0-8 3.6-8 8 0 1.4.4 2.8 1.1 4l-1.2 4.3 4.4-1.2c1.1.6 2.3.9 3.7.9 4.4 0 8-3.6 8-8 0-2-0.8-4-2.5-5.5zm-5.5 13c-1.2 0-2.3-0.3-3.3-0.8l-0.2-0.1-2.6 0.7 0.7-2.5-0.1-0.2c-0.7-1.1-1.1-2.3-1.1-3.6 0-3.6 2.9-6.5 6.5-6.5 1.7 0 3.3 0.7 4.5 1.9s1.9 2.8 1.9 4.5c0 3.6-2.9 6.5-6.5 6.5zm3.6-4.9c-0.2-0.1-1.2-0.6-1.4-0.7-0.2-0.1-0.4-0.1-0.6 0.1-0.2 0.2-0.7 0.7-0.9 0.8-0.2 0.2-0.4 0.1-0.6 0-0.2-0.1-0.9-0.3-1.7-1-0.6-0.6-1-1.3-1.1-1.5-0.1-0.2 0-0.4 0.1-0.5 0.1-0.1 0.2-0.3 0.3-0.4 0.1-0.1 0.1-0.2 0.2-0.3 0.1-0.1 0.1-0.2 0.2-0.3 0.1-0.1 0.1-0.2 0.2-0.3 0.1-0.1 0.1-0.2 0.2-0.3 0.1-0.1 0.1-0.2 0.2-0.3 0.1-0.1 0.1-0.2 0.2-0.3 0.1-0.1 0.1-0.2 0.2-0.3z"/>
+                            </svg>
+                            Atendimento rápido pelo WhatsApp
+                        </a>
+                    </form>
+                </div>
             </div>
         </div>
     </section>
     
 
     <footer>
+            <!-- Botões flutuantes WhatsApp + Manychat -->
+            <div class="whatsapp-float">
+                <a class="whatsapp-btn" href="https://wa.me/5511990800000" target="_blank" title="Fale conosco no WhatsApp">
+                    <svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="16" cy="16" r="16" fill="#25d366"/>
+                        <path d="M22.5 9.5c-1.5-1.5-3.5-2.5-5.5-2.5-4.4 0-8 3.6-8 8 0 1.4.4 2.8 1.1 4l-1.2 4.3 4.4-1.2c1.1.6 2.3.9 3.7.9 4.4 0 8-3.6 8-8 0-2-0.8-4-2.5-5.5zm-5.5 13c-1.2 0-2.3-0.3-3.3-0.8l-0.2-0.1-2.6 0.7 0.7-2.5-0.1-0.2c-0.7-1.1-1.1-2.3-1.1-3.6 0-3.6 2.9-6.5 6.5-6.5 1.7 0 3.3 0.7 4.5 1.9s1.9 2.8 1.9 4.5c0 3.6-2.9 6.5-6.5 6.5zm3.6-4.9c-0.2-0.1-1.2-0.6-1.4-0.7-0.2-0.1-0.4-0.1-0.6 0.1-0.2 0.2-0.7 0.7-0.9 0.8-0.2 0.2-0.4 0.1-0.6 0-0.2-0.1-0.9-0.3-1.7-1-0.6-0.6-1-1.3-1.1-1.5-0.1-0.2 0-0.4 0.1-0.5 0.1-0.1 0.2-0.3 0.3-0.4 0.1-0.1 0.1-0.2 0.2-0.3 0.1-0.1 0.1-0.2 0.2-0.3 0.1-0.1 0.1-0.2 0.2-0.3 0.1-0.1 0.1-0.2 0.2-0.3 0.1-0.1 0.1-0.2 0.2-0.3 0.1-0.1 0.1-0.2 0.2-0.3 0.1-0.1 0.1-0.2 0.2-0.3 0.1-0.1 0.1-0.2 0.2-0.3 0.1-0.1 0.1-0.2 0.2-0.3 0.1-0.1 0.1-0.2 0.2-0.3 0.1-0.1 0.1-0.2 0.2-0.3 0.1-0.1 0.1-0.2 0.2-0.3 0.1-0.1 0.1-0.2 0.2-0.3 0.1-0.1 0.1-0.2 0.2-0.3 0.1-0.1 0.1-0.2 0.2-0.3 0.1-0.1 0.1-0.2 0.2-0.3 0.1-0.1 0.1-0.2 0.2-0.3z"/>
+                </a>
+                <!-- Manychat/JivoSite já está presente -->
+            </div>
+    </body>
         <div class="container">
             <div class="footer-content">
                 <div class="footer-col">
