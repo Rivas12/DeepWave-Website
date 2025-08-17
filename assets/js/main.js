@@ -117,7 +117,7 @@ document.addEventListener("DOMContentLoaded", function() {
     }
 
     // Disparar conversão ao clicar no botão flutuante WhatsApp
-    const whatsappFloatBtn = document.querySelector('.whatsapp-btn');
+    const whatsappFloatBtn = document.querySelector('.whatsapp-button');
     if (whatsappFloatBtn) {
         whatsappFloatBtn.addEventListener('click', function() {
             if (window.triggerAdsConversion) window.triggerAdsConversion();
